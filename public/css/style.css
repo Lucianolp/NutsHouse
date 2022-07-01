@@ -9,6 +9,8 @@ header {
   width: 100vw;
   height: 95px;
   background: #567905;
+  /* Opcional degradado
+  background: linear-gradient(0deg, hsl(78, 92%, 25%),hsl(78, 92%, 32%)); */
   display: flex;
   justify-content: space-between;
   z-index: 2;
@@ -187,7 +189,9 @@ body {
   font-size: 20px;
 }
 .btn-primary:hover {
-  background: #ff7033b2;
+  background: #ff7033dc;
+  transition:  0.3s;
+  transform: scale(1.1, 1.1);
 }
 .btn-primary:focus{
   background: #ff7033;
