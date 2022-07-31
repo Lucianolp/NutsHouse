@@ -17,6 +17,10 @@ let precioMixVigor1K = document.getElementById('precioMixVigor1K');
 let precioMixVigorSinPasas500 = document.getElementById('precioMixVigorSinPasas500');
 let precioGranolaMuesli250 = document.getElementById('precioGranolaMuesli250');
 let precioGranolita250 = document.getElementById('precioGranolita250');
+let precioDesayunoConPasas = document.getElementById('precioDesayunoConPasas');
+let precioDesayunoSinPasas = document.getElementById('precioDesayunoSinPasas');
+let precioComboJuntada = document.getElementById('precioComboJuntada')
+let precioComboMixeado = document.getElementById('precioComboMixeado')
 
 //Leer precios de GoogleSheets
 fetch("https://docs.google.com/spreadsheets/d/1f52ckngd5jih40fI8CLB_ox5jAL4xdP2MnZmvJQO0Lk/gviz/tq?")
@@ -24,6 +28,7 @@ fetch("https://docs.google.com/spreadsheets/d/1f52ckngd5jih40fI8CLB_ox5jAL4xdP2M
   .then(data => {
     const temp = data.substring(47).slice(0,-2);
     const json = JSON.parse(temp)
+    console.log(json.table.rows)
     mostrarPrecios(json);
   })
   .catch((error) => {
@@ -46,6 +51,10 @@ const mostrarPrecios = (json) => {
   precioMixVigorSinPasas500.innerHTML = "$ " + json.table.rows[3].c[2].f;
   precioGranolaMuesli250.innerHTML = "$ " + json.table.rows[10].c[2].f;
   precioGranolita250.innerHTML = "$ " + json.table.rows[11].c[2].f;
+  precioDesayunoConPasas.innerHTML = "$ " + json.table.rows[12].c[2].f;
+  precioDesayunoSinPasas.innerHTML = "$ " + json.table.rows[13].c[2].f;
+  precioComboJuntada.innerHTML = "$ " + json.table.rows[14].c[2].f;
+  precioComboMixeado.innerHTML = "$ " + json.table.rows[15].c[2].f;
 }
 
 function menuActive() {
